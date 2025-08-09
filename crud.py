@@ -2,9 +2,65 @@
 CRUD operations for PYQ and PDF history management.
 Provides database interaction functions for the IntelliJect application.
 """
+
 from sqlalchemy.orm import Session
 from typing import List, Dict, Optional
 import models
+
+def get_subjects(db: Session) -> List[str]:
+    """
+    Get all unique subjects from the database.
+    
+    Args:
+        db: Database session
+        
+    Returns:
+        List of unique subject names
+    """
+    try:
+        subjects = db.query(models.PYQ.subject).distinct().all()
+        return [subject[0] for subject in subjects if subject[0]]
+    except Exception as e:
+        print(f"❌ Error getting subjects: {e}")
+        return []
+
+def create_subject(db: Session, subject_name: str) -> bool:
+    """
+    Create a dummy PYQ entry for a subject to ensure it appears in subjects list.
+    
+    Args:
+        db: Database session
+        subject_name: Name of the subject to create
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        # Check if subject already exists
+        existing = db.query(models.PYQ).filter(models.PYQ.subject == subject_name).first()
+        if existing:
+            return True
+            
+        # Create a placeholder PYQ entry for this subject
+        placeholder_pyq = models.PYQ(
+            subject=subject_name,
+            sub_topic="General",
+            question=f"Sample question for {subject_name}",
+            marks=1,
+            year="2024",
+            semester="1",
+            branch="General",
+            unit="1"
+        )
+        
+        db.add(placeholder_pyq)
+        db.commit()
+        return True
+        
+    except Exception as e:
+        db.rollback()
+        print(f"❌ Error creating subject {subject_name}: {e}")
+        return False
 
 def get_pyqs_by_subject(db: Session, subject: str) -> List[models.PYQ]:
     """
@@ -33,13 +89,13 @@ def store_pyqs(db: Session, pyqs: List[Dict], subject: str) -> int:
     """
     if not pyqs:
         return 0
-        
+
     pyq_objects = []
     for entry in pyqs:
         question = entry.get("question")
         if not question:
             continue
-            
+
         pyq_obj = models.PYQ(
             subject=subject,
             sub_topic=entry.get("sub_topic", ""),
@@ -51,7 +107,7 @@ def store_pyqs(db: Session, pyqs: List[Dict], subject: str) -> int:
             unit=entry.get("unit", "")
         )
         pyq_objects.append(pyq_obj)
-    
+
     try:
         db.add_all(pyq_objects)
         db.commit()

@@ -54,6 +54,8 @@ def ensure_database_setup():
     except Exception as e:
         print(f"❌ Database setup error: {e}")
 
+
+
 # Call this function at the start of your Streamlit app
 if __name__ == "__main__":
     ensure_database_setup()
