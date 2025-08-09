@@ -18,6 +18,47 @@ import crud
 from rag_pipeline import semantic_search_db, infer_subtopic
 from utils import extract_text_from_pdf
 from langchain_openai import ChatOpenAI
+# Add this at the top of main.py after imports
+def ensure_database_setup():
+    """Ensure database tables are created"""
+    try:
+        from database import engine
+        from models import Base
+        
+        # Create all tables
+        Base.metadata.create_all(bind=engine)
+        print("✅ Database tables created successfully")
+        
+        # Add default subjects if empty
+        from database import SessionLocal
+        from crud import get_subjects, create_subject
+        
+        db = SessionLocal()
+        try:
+            subjects = get_subjects(db)
+            if not subjects:
+                default_subjects = [
+                    "Computer Science",
+                    "Mathematics", 
+                    "Physics",
+                    "Chemistry",
+                    "Biology"
+                ]
+                
+                for subject_name in default_subjects:
+                    create_subject(db, subject_name)
+                    print(f"✅ Created subject: {subject_name}")
+        finally:
+            db.close()
+            
+    except Exception as e:
+        print(f"❌ Database setup error: {e}")
+
+# Call this function at the start of your Streamlit app
+if __name__ == "__main__":
+    ensure_database_setup()
+    # Your existing main() function call
+
 
 # Initialize database on startup
 def init_database():
@@ -623,4 +664,5 @@ Instructions:
             st.success(f"✅ Processing Complete! Highlighted answers found on {total_highlighted}/{total_pages} pages.")
 
 if __name__ == "__main__":
+    ensure_database_setup()  
     main()
