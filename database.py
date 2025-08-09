@@ -1,6 +1,5 @@
 """
-Database configuration and session management for IntelliJect.
-PostgreSQL-first with JSON fallback support.
+Database configuration with proper error handling and JSON fallback.
 """
 
 import os
@@ -9,9 +8,6 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Database configuration - PostgreSQL first, SQLite second, JSON fallback
-DATABASE_URL = os.getenv("DATABASE_URL")
-
 def load_subjects_from_json():
     """Load subjects from JSON file as fallback"""
     try:
@@ -19,56 +15,31 @@ def load_subjects_from_json():
             data = json.load(file)
             return data.get("subjects", [])
     except FileNotFoundError:
-        print("⚠️ subjects.json not found, creating default file")
-        create_default_subjects_json()
         return ["Computer Science", "Mathematics", "Physics", "Chemistry", "Biology"]
     except Exception as e:
         print(f"❌ Error reading subjects.json: {e}")
         return ["Computer Science", "Mathematics", "Physics", "Chemistry", "Biology"]
 
-def create_default_subjects_json():
-    """Create default subjects.json file"""
-    default_data = {
-        "subjects": [
-            "Cyber Security",
-            "Probability and Statistics",
-            "Environmental Sciences",
-            "Computer Science",
-            "Mathematics", 
-            "Physics",
-            "Chemistry",
-            "Biology"
-        ],
-        "metadata": {
-            "created": "auto-generated",
-            "description": "Default subjects for IntelliJect application",
-            "mode": "fallback"
-        }
-    }
-    
-    try:
-        with open("subjects.json", "w", encoding="utf-8") as file:
-            json.dump(default_data, file, indent=2, ensure_ascii=False)
-        print("✅ Created default subjects.json file")
-    except Exception as e:
-        print(f"❌ Error creating subjects.json: {e}")
-
-# Database setup with PostgreSQL-first approach
+# Initialize variables
 engine = None
+SessionLocal = None
 DATABASE_MODE = "json"
 
+# Database setup with proper error handling
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 if DATABASE_URL:
-    # Try PostgreSQL first
     try:
+        # Fix postgres:// URL format
         if DATABASE_URL.startswith("postgres://"):
             DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
         
+        # Create and test PostgreSQL engine
         engine = create_engine(
             DATABASE_URL,
             pool_pre_ping=True,
             pool_recycle=300,
             pool_timeout=20,
-            pool_reset_on_return='commit',
             echo=False
         )
         
@@ -76,13 +47,15 @@ if DATABASE_URL:
         with engine.connect() as conn:
             conn.execute(text("SELECT 1"))
         
-        print("🐘 Using PostgreSQL database")
+        SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
         DATABASE_MODE = "postgresql"
+        print("🐘 Using PostgreSQL database")
         
     except Exception as e:
         print(f"❌ PostgreSQL connection failed: {e}")
-        print("📁 Falling back to JSON file storage")
+        print("📁 Falling back to JSON mode")
         engine = None
+        SessionLocal = None
         DATABASE_MODE = "json"
 else:
     # Try SQLite for local development
@@ -94,24 +67,20 @@ else:
             echo=False
         )
         
-        # Test connection
+        # Test SQLite connection
         with engine.connect() as conn:
             conn.execute(text("SELECT 1"))
         
-        print("🗃️ Using SQLite database")
+        SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
         DATABASE_MODE = "sqlite"
+        print("🗃️ Using SQLite database")
         
     except Exception as e:
         print(f"❌ SQLite connection failed: {e}")
-        print("📁 Falling back to JSON file storage")
+        print("📁 Using JSON fallback mode")
         engine = None
+        SessionLocal = None
         DATABASE_MODE = "json"
-
-# Create SessionLocal class for database sessions (only if engine exists)
-if engine:
-    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-else:
-    SessionLocal = None
 
 # Create Base class for model definitions
 Base = declarative_base()
@@ -121,7 +90,7 @@ def get_database_mode():
     return DATABASE_MODE
 
 def get_db_session():
-    """Direct function to get database session. Returns None if using JSON fallback."""
+    """Get database session. Returns None if using JSON fallback."""
     if SessionLocal:
         try:
             return SessionLocal()

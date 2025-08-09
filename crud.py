@@ -7,22 +7,34 @@ from sqlalchemy.orm import Session
 from typing import List, Dict, Optional
 import models
 
-def get_subjects(db: Session) -> List[str]:
+def get_subjects(db: Session = None) -> List[str]:
     """
-    Get all unique subjects from the database.
+    Get all unique subjects from database or JSON file.
+    """
+    from database import get_database_mode, load_subjects_from_json
     
-    Args:
-        db: Database session
-        
-    Returns:
-        List of unique subject names
-    """
+    database_mode = get_database_mode()
+    
+    # If JSON mode or no database session, use JSON fallback
+    if database_mode == "json" or db is None:
+        return load_subjects_from_json()
+    
+    # Try database first
     try:
         subjects = db.query(models.PYQ.subject).distinct().all()
-        return [subject[0] for subject in subjects if subject[0]]
+        result = [subject[0] for subject in subjects if subject[0]]
+        
+        # If no subjects in database, fallback to JSON
+        if not result:
+            print("📁 No subjects in database, falling back to JSON")
+            return load_subjects_from_json()
+            
+        return result
     except Exception as e:
-        print(f"❌ Error getting subjects: {e}")
-        return []
+        print(f"❌ Error getting subjects from database: {e}")
+        print("📁 Falling back to JSON file")
+        return load_subjects_from_json()
+
 
 def create_subject(db: Session, subject_name: str) -> bool:
     """
