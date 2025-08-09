@@ -20,39 +20,51 @@ from utils import extract_text_from_pdf
 from langchain_openai import ChatOpenAI
 # Add this at the top of main.py after imports
 def ensure_database_setup():
-    """Ensure database tables are created"""
+    """Ensure database tables are created and PYQ data is loaded with PostgreSQL-first approach"""
     try:
-        from database import engine
+        from database import get_database_mode, engine, SessionLocal
         from models import Base
-        
-        # Create all tables
-        Base.metadata.create_all(bind=engine)
-        print("✅ Database tables created successfully")
-        
-        # Add default subjects if empty
-        from database import SessionLocal
         from crud import get_subjects, create_subject
+        import data_loader
         
-        db = SessionLocal()
-        try:
-            subjects = get_subjects(db)
-            if not subjects:
-                default_subjects = [
-                    "Computer Science",
-                    "Mathematics", 
-                    "Physics",
-                    "Chemistry",
-                    "Biology"
-                ]
-                
-                for subject_name in default_subjects:
-                    create_subject(db, subject_name)
-                    print(f"✅ Created subject: {subject_name}")
-        finally:
-            db.close()
+        # Test database first
+        database_working = data_loader.test_database_connection()
+        database_mode = get_database_mode()
+        
+        print(f"🔧 Database mode: {database_mode}")
+        print(f"🔧 Database working: {database_working}")
+        
+        if database_mode == "json" or not database_working:
+            # JSON fallback mode
+            from database import load_subjects_from_json
+            subjects = load_subjects_from_json()
+            print(f"📁 Using JSON fallback with {len(subjects)} subjects")
+            print(f"📊 Available subjects: {subjects}")
+            return
+        
+        # PostgreSQL/SQLite mode - create tables and populate
+        if engine:
+            Base.metadata.create_all(bind=engine)
+            print("✅ Database tables created successfully")
             
+            # Load PYQ data from JSON files
+            data_loader.load_all_subjects()
+            
+            # Verify subjects are loaded
+            db = SessionLocal()
+            try:
+                subjects = get_subjects(db)
+                if subjects:
+                    print(f"✅ Found {len(subjects)} subjects in database: {subjects}")
+                else:
+                    print("⚠️ No subjects found in database, will fallback to JSON")
+            finally:
+                db.close()
+        
     except Exception as e:
         print(f"❌ Database setup error: {e}")
+        print("📁 Application will use JSON fallback mode")
+
 
 
 

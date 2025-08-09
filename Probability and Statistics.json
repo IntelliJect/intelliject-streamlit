@@ -1,0 +1,220 @@
+[
+  {
+    "question": "The mean of 200 items was 50. Later on it was discovered that 2 items were misread as 92 and 8 instead of 192 and 88. Find out the corrected mean.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit I",
+    "topic": "Descriptive Statistics",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "A bag X contains 2 white and 3 red balls and a bag Y contains 4 white and 5 red balls. One ball is drawn at random from one of the bags and is found to be red. Find the probability that it was drawn from bag Y.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit I",
+    "topic": "Bayes Theorem",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "In 4 tosses of a coin, let x be the number of heads. Calculate the expected values of x.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit II",
+    "topic": "Expected Value of Random Variables",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "The probability density function f(x) of a continuous random variable x is f(x) = A/x², 1 ≤ x ≤ 4. Find the value of A.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit II",
+    "topic": "Probability Density Function",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "For 10 observations on price (x) and supply (y), the following data were obtained Σx = 130, Σy = 220, Σx² = 2288, Σy² = 5506 and Σxy = 3467. Obtain the regression line y on x.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Correlation and Regression",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "Find out the mean, variance and M.G.F. of the exponential distribution.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Exponential Distribution",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "A machine produced 16 defective articles in a batch of 500. After overhauling, it produced 3 defectives in a batch of 100. Has the machine improved?",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit IV",
+    "topic": "Hypothesis Testing",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "Define Sampling with its applications, Null Hypothesis, Type I and II error and level of significance.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit IV",
+    "topic": "Sampling and Hypothesis Testing",
+    "semester": "end-sem",
+    "marks": "2.5"
+  },
+  {
+    "question": "In a certain distribution, the first four moments about the point x = 4 are -1.5, 17, -30 and 308. Find the moments about mean and about origin.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit I",
+    "topic": "Moments and Measures of Skewness",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "The annual salaries of a group of employers are given in the following table. Find Standard deviation and coefficient of variation. Salaries X in thousand: 45, 5, 55, 6, 6, 70, 7, 80. No of persons: 3, 5, 8, 7, 9, 7, 4, 7",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit I",
+    "topic": "Standard Deviation and Coefficient of Variation",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "Calculate the mean and median from the following table: Class interval: [6.5–7.5, 7.5–8.5, 8.5–9.5, 9.5–10.5, 10.5–11.5, 11.5–12.5, 12.5–13.5]. Frequency: [5, 12, 25, 48, 32, 6, 1]",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit I",
+    "topic": "Mean and Median of Grouped Data",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  
+  {
+    "question": "The standard deviation of a symmetric distribution is 5. What must be the value of the fourth moment about mean in order that the distribution be (i) leptokurtic (ii) mesokurtic (iii) platykurtic.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit II",
+    "topic": "Moments and Kurtosis",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "Let (x, y) be a 2-Dim continuous random variable having the joint density function f(x, y) = x·e^(-x(y+1)), 0 < x < 2, y > 0. Find the distribution function of X+Y.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit II",
+    "topic": "Joint Probability Distributions",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "The joint probability distribution of two random variables X and Y is given by: P(X=0, Y=1) = 1/3, P(X=1, Y=–1) = 1/3 and P(X=1, Y=1) = 1/3. Find (i) Marginal distribution of X and Y, and (ii) the conditional probability distribution of X given Y = 1.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit II",
+    "topic": "Joint and Conditional Distributions",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "A die is tossed thrice. A success is getting 1 or 6 on a toss. Find the mean and variance of the number of successes.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit II",
+    "topic": "Binomial Distribution",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "Derive mean and variance using the given M.G.F. of the random variable M_X(t) = (q + p·e^t)^n.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Moment Generating Function",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "A manufacturer knows from experience that the resistance of resistors he produces is normal with mean 100 ohms and standard deviation 2 ohms. What percentage of resistors will have resistance between 98 ohms and 102 ohms?",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Normal Distribution and Area Under Curve",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "Obtain the rank correlation coefficient for the following data: X = 68, 64, 75, 50, 64, 80, 75, 60, 64; Y = 62, 58, 65, 81, 60, 68, 48, 70",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Correlation and Rank Correlation",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "In a family with 4 children each, how many families would be expected to have (i) 2 boys and 2 girls (ii) no girl (iii) at most 2 girls? Assume equal probabilities for boys and girls.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Binomial Probability",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "State the Central Limit Theorem. A coin is tossed 200 times. Find the approximate probability of the number of heads obtained is between 80 and 120 by CL theorem.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit III",
+    "topic": "Central Limit Theorem",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "The nine items of a sample have the following values: 45, 47, 50, 52, 48, 47, 49, 53, 51. Does the mean of these values differ significantly from the assumed mean 47.5?",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit IV",
+    "topic": "Hypothesis Testing – t-test",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "The theory predicts the proportion of beans in the four groups G1, G2, G3, G4 should be in the ratio 9:3:3:1. In an experiment with 1600 beans the numbers in the four groups were 882, 313, 287 and 118. Does the experimental result support the theory?",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit IV",
+    "topic": "Chi-Square Goodness of Fit",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "Can vaccination be regarded as preventive measure of small pox as evidenced by the following data of 1482 persons exposed to smallpox in a locality. 368 in all were attacked of these 1482 persons and 343 were vaccinated and of these only 35 were attacked.",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit IV",
+    "topic": "Contingency Table and Chi-Square Test",
+    "semester": "end-sem",
+    "marks": "5"
+  },
+  {
+    "question": "A machine is producing bolts of which a certain fraction is defective. A random sample of 400 is taken from a large batch and is found to contain 30 defective bolts. Does this indicate that the proportion of defectives is larger than that claimed by the manufacturer where the manufacturer claims that only 5% of his product are defective?",
+    "branch": "CSE/IT/AI/ML",
+    "year": "2024",
+    "unit": "Unit IV",
+    "topic": "Proportion Testing – Hypothesis Test",
+    "semester": "end-sem",
+    "marks": "5"
+  }
+
+]

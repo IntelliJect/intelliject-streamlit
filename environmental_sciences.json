@@ -1,0 +1,236 @@
+[
+    {
+        "question": "Discuss the method for determination of Chemical oxygen demand.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 2.5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "Define the 'break point chlorination' in disinfection process of water for domestic purpose.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 2.5,
+        "sub_topic": "Water Treatment Methods"
+    },
+    {
+        "question": "What is the % atom economy in the formation of methyl methacrylate from acetylene.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 2.5,
+        "sub_topic": "Green Chemistry"
+    },
+    {
+        "question": "Explain the concept of Carbon credits with its merits and demerits.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 2.5,
+        "sub_topic": "Air Pollution and CO2 Sequestration"
+    },
+    {
+        "question": "Explain the process of removal of colloidal solids from waste water.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Wastewater Treatment"
+    },
+    {
+        "question": "100 mL of water sample required 30 mL of N/50 HCl for neutralization to phenolphthalein end-point and when methyl orange was added, the acid required was 35 mL. Calculate the alkalinity of water in terms of CaCO3 equivalent. Also mention the type of alkalinity.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "A standard hard water solution of 10 ppm was made in distilled water. 100 mL of the above solution required 20 mL of EDTA solution on titration. 100 mL of the hard water sample required 40 mL of the same EDTA solution on titration. After boiling, 100 mL of this water, cooling, filtering and then titrating required 15 mL of EDTA solution. Calculate the temporary and permanent hardness of water.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "Define photochemical smog and its main chemical constituent. Describe the methods for control of particulate emissions.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 3",
+        "marks": 5,
+        "sub_topic": "Air Pollution"
+    },
+    {
+        "question": "Describe the green methodologies with suitable examples. Discuss the formation of power alcohol with chemical reaction.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 3",
+        "marks": 5,
+        "sub_topic": "Green Chemistry and Renewable Energy"
+    },
+    {
+        "question": "Discuss various chemical methods for treatment of solid waste.",
+        "year": "2025",
+        "semester": "re-mid",
+        "branch": "CSE-AI",
+        "unit": "Unit 3",
+        "marks": 5,
+        "sub_topic": "Solid and Hazardous Waste Pollution"
+    },
+    {
+        "question": "Which buffer solution is used in the determination of hardness using EDTA method in the water sample and what is its role?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 2.5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "What is the principle of determination of Chemical Oxygen Demand (COD) and why is it usually higher than Biochemical Oxygen Demand (BOD) in wastewater?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 2.5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "Discuss the sources and sinks of SOx.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 2.5,
+        "sub_topic": "Air Pollution"
+    },
+    {
+        "question": "Discuss the concept of Atom Economy giving suitable example of green chemical synthesis.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 2.5,
+        "sub_topic": "Green Chemistry"
+    },
+    {
+        "question": "What are the common forms of chromium present in the environment? Which of these is most toxic?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 3",
+        "marks": 2.5,
+        "sub_topic": "Chemical Toxicology"
+    },
+    {
+        "question": "What are photosensitizers or promoters? Why are these added to polymers?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 3",
+        "marks": 2.5,
+        "sub_topic": "Eco-Friendly Polymers"
+    },
+    {
+        "question": "What are the major challenges of green hydrogen energy generation?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 4",
+        "marks": 2.5,
+        "sub_topic": "Energy Resources and Management"
+    },
+    {
+        "question": "Why is it necessary to have Environmental Impact Assessment (EIA) before the development of any project?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 4",
+        "marks": 2.5,
+        "sub_topic": "Resource Management and Environmental Laws"
+    },
+    {
+        "question": "Discuss the chlorination of water and significance of breakpoint chlorination.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 5,
+        "sub_topic": "Water Treatment Methods"
+    },
+    {
+        "question": "50 ml of standard hard water containing 1.5 mg of pure CaCO3 per mL consumed 45 mL of EDTA. 40 mL of a water sample consumed 18 mL of the same EDTA solution using Eriochrome Black T as indicator. After boiling, 40 mL of the same water sample required 15 mL of the EDTA solution. Calculate the temporary, permanent and total hardness of water sample.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "Discuss the steps involved in primary treatment of wastewater and the role of plant nutrients and pesticides in water pollution.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 5,
+        "sub_topic": "Wastewater Treatment"
+    },
+    {
+        "question": "A 100 mL alkaline water sample required 10 mL of N/50 HCl for phenolphthalein endpoint and 15 mL of N/50 HCl for methyl orange endpoint. Determine the types and extent of alkalinity present in the water sample.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 1",
+        "marks": 5,
+        "sub_topic": "Water Pollution and Quality Parameters"
+    },
+    {
+        "question": "Discuss the physical and chemical processes used for treatment of hazardous waste.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Solid and Hazardous Waste Pollution"
+    },
+    {
+        "question": "What is the significance of 'selection of renewable feedstock as starting material' in a process? Give at least two examples with suitable reactions.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Green Chemistry"
+    },
+    {
+        "question": "Explain the concept of carbon dioxide sequestration. What are various ways to sequester CO2 artificially?",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Air Pollution and CO2 Sequestration"
+    },
+    {
+        "question": "Enumerate the following: (a) Sanitary landfill for waste disposal and treatment. (b) Green reagents used in a process.",
+        "year": "2024",
+        "semester": "end-sem",
+        "branch": "CSE-AI",
+        "unit": "Unit 2",
+        "marks": 5,
+        "sub_topic": "Solid Waste Management and Green Chemistry"
+    }
+]
